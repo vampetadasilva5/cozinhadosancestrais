@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozinha dos Ancestrais | Sabedoria Antiga & Longevidade Saudável</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: {
+              50: '#FDFBF7',
+              100: '#FBF7F0',
+              200: '#F5ECE0',
+              300: '#EBDCCE',
+            },
+            terracota: {
+              500: '#D9532F',
+              600: '#C03E1B',
+              700: '#9B2C0E',
+            },
+            oliva: {
+              700: '#2E4C38',
+              800: '#223829',
+              900: '#17271C',
+            },
+            dourado: {
+              500: '#D4A346',
+              600: '#B88628',
+            },
+            texto: {
+              principal: '#1A1C18',
+              suave: '#3D4139',
+            }
+          },
+          fontFamily: {
+            serif: ['Merriweather', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+    body {
+      color: #1A1C18;
+      background-color: #FDFBF7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.65;
+    }
+    .book-cover {
+      position: relative;
+      border-radius: 4px 14px 14px 4px;
+      box-shadow: -8px 12px 25px -4px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0,0,0,0.08);
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    .book-cover:hover {
+      transform: translateY(-6px) rotateY(-3deg);
+      box-shadow: -12px 18px 30px -4px rgba(0, 0, 0, 0.42);
+    }
+    .book-spine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.25) 50%, rgba(255,255,255,0.15) 100%);
+      border-radius: 4px 0 0 4px;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { box-shadow: 0 4px 15px rgba(217, 83, 47, 0.4); }
+      50% { box-shadow: 0 8px 25px rgba(217, 83, 47, 0.65); }
+    }
+    .btn-cta-pulse {
+      animation: pulse-subtle 3s infinite;
+    }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.35s ease;
+    }
+    .faq-content.open {
+      max-height: 600px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-dourado-500 selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-oliva-900 text-creme-100 py-2.5 px-4 text-center text-sm md:text-base font-medium flex items-center justify-center gap-2 border-b border-oliva-800">
+    <svg class="w-5 h-5 text-dourado-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"></path>
+    </svg>
+    <span>Site Seguro & Oficial • <strong>Letras Grandes e Fáceis de Ler</strong> em qualquer celular ou tablet</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-creme-100/95 sticky top-0 z-40 backdrop-blur-md border-b border-creme-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-oliva-800 text-dourado-500 flex items-center justify-center shadow-md border-2 border-dourado-500 flex-shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-tight text-oliva-900 block leading-tight">Cozinha dos Ancestrais</span>
+          <span class="text-xs text-oliva-700 tracking-wider font-semibold uppercase block">Saúde Real & Sabedoria Antiga</span>
+        </div>
+      </a>
+
+      <a href="#catalogo" class="hidden sm:inline-flex items-center gap-2 bg-oliva-800 hover:bg-oliva-900 text-creme-100 px-5 py-2.5 rounded-full font-bold text-sm shadow transition">
+        <span>Ver os Livros</span>
+        <svg class="w-4 h-4 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-b from-creme-100 via-creme-200 to-creme-100 py-12 md:py-20 border-b border-creme-300">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 bg-oliva-700/10 text-oliva-800 border border-oliva-700/20 px-4 py-1.5 rounded-full text-sm md:text-base font-semibold mb-6">
+        <svg class="w-5 h-5 text-oliva-700" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+        </svg>
+        <span>Comprovado pela Ciência Médica Moderna</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-oliva-900 leading-tight md:leading-tight mb-6">
+        O Segredo dos Nossos Ancestrais para Viver Mais de 90 Anos com <span class="text-terracota-600 underline decoration-dourado-500 decoration-4 underline-offset-8">Vitalidade, Clareza e Saúde</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-texto-suave max-w-3xl mx-auto mb-8 font-normal leading-relaxed">
+        Descubra receitas deliciosas, fáceis de fazer e preparadas com ingredientes simples de feira. 
+        Recupere o vigor do seu <strong>coração, cérebro, estômago e fígado</strong> sem remédios agressivos.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+        <a href="#catalogo" class="btn-cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white font-bold text-xl md:text-2xl py-5 px-8 rounded-2xl shadow-xl transition-transform active:scale-95">
+          <svg class="w-7 h-7 text-creme-100" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>QUERO CONHECER OS LIVROS</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto pt-4 text-left">
+        <div class="bg-creme-50 p-5 rounded-2xl border border-creme-300 shadow-sm flex items-start gap-4">
+          <div class="bg-oliva-800 text-dourado-500 p-3 rounded-xl flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-oliva-900 leading-snug">Ingredientes de Feira</h2>
+            <p class="text-sm text-texto-suave">Nada de produtos caros ou difíceis. Tudo você encontra na feira do seu bairro.</p>
+          </div>
+        </div>
+
+        <div class="bg-creme-50 p-5 rounded-2xl border border-creme-300 shadow-sm flex items-start gap-4">
+          <div class="bg-oliva-800 text-dourado-500 p-3 rounded-xl flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-oliva-900 leading-snug">Letras Grandes no Celular</h2>
+            <p class="text-sm text-texto-suave">Livros digitais com formatação clara e agradável. Pode também imprimir se preferir.</p>
+          </div>
+        </div>
+
+        <div class="bg-creme-50 p-5 rounded-2xl border border-creme-300 shadow-sm flex items-start gap-4">
+          <div class="bg-oliva-800 text-dourado-500 p-3 rounded-xl flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-oliva-900 leading-snug">Garantia Total de 7 Dias</h2>
+            <p class="text-sm text-texto-suave">Se você não amar as receitas e as orientações, devolvemos 100% do seu dinheiro sem perguntas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIÊNCIA E SABEDORIA ANCESTRAL -->
+  <section class="py-16 md:py-20 bg-creme-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oliva-900 mb-4">
+          Por que nossos avós viviam tanto e sem tantas dores?
+        </h2>
+        <div class="w-24 h-1.5 bg-dourado-500 mx-auto rounded-full mb-6"></div>
+        <p class="text-lg md:text-xl text-texto-suave">
+          Não é mágica nem genética especial. É a <strong>verdadeira comida com poder curativo</strong> que a indústria moderna substituiu por caixas cheias de químicos inflamatórios.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-6 md:p-10 rounded-3xl border border-creme-300 shadow-md">
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-xl flex-shrink-0">✕</div>
+            <div>
+              <h3 class="font-bold text-lg text-oliva-900">A Alimentação Atual (Ultraprocessada)</h3>
+              <p class="text-texto-suave text-base">Causa inflamação silenciosa, gordura no fígado, queimação no estômago, picos de pressão e esquecimentos frequentes.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl flex-shrink-0">✓</div>
+            <div>
+              <h3 class="font-bold text-lg text-oliva-900">A Alimentação Ancestral (Comprovada)</h3>
+              <p class="text-texto-suave text-base">Caldos de ossos ricos em colágeno, ervas nativas desintoxicantes, gorduras nobres e fermentações naturais que regeneram a flora intestinal e protegem os vasos sanguíneos.</p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-creme-200/70 rounded-2xl border-l-4 border-oliva-800 text-oliva-900">
+            <p class="italic text-base md:text-lg">
+              "Estudos recentes comprovam: hábitos culinários ancestrais reduzem consideravelmente os riscos de distúrbios digestivos, cardiovasculares e perda de memória na terceira idade."
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-tr from-oliva-900 to-oliva-800 text-creme-100 p-8 rounded-2xl shadow-xl flex flex-col justify-center text-center relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-dourado-500/10 rounded-full pointer-events-none"></div>
+          <span class="text-dourado-500 font-semibold tracking-widest uppercase text-xs mb-2">Coleção Exclusiva</span>
+          <h4 class="font-serif text-2xl md:text-3xl font-bold mb-4">Comida de Verdade Como Seu Melhor Remédio</h4>
+          <p class="text-creme-200 text-base mb-6 leading-relaxed">
+            Nossos livros foram escritos com carinho em linguagem clara, direta, sem termos difíceis de médico e com passo a passo ilustrado.
+          </p>
+          <div class="bg-oliva-800/80 border border-dourado-500/30 p-4 rounded-xl text-sm font-medium">
+            🍲 Mais de 250 receitas tradicionais adaptadas para a sua cozinha atual.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1: CATÁLOGO DOS LIVROS INDIVIDUAIS PRIMEIRO -->
+  <section id="catalogo" class="py-16 md:py-24 bg-creme-200/60 border-t border-b border-creme-300">
+    <div class="max-w-6xl mx-auto px-4">
+
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="bg-terracota-500/10 text-terracota-600 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">
+          Escolha o Que Seu Corpo Mais Precisa Hoje
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-oliva-900 mt-4 mb-4">
+          A Coleção de E-books Saúde Ancestral
+        </h2>
+        <p class="text-lg md:text-xl text-texto-suave">
+          Você pode adquirir cada guia individualmente por apenas R$ 9,90 ou aproveitar o <strong>Super Pacote Completo</strong> abaixo com desconto especial.
+        </p>
+      </div>
+
+      <!-- Grid dos Livros Individuais (5 Livros) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+
+        <!-- LIVRO 1: CORAÇÃO -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-creme-300 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="h-60 w-44 mx-auto mb-6 book-cover bg-gradient-to-br from-rose-900 via-rose-800 to-red-950 p-4 text-white flex flex-col justify-between text-center border-l-4 border-amber-400">
+              <div class="book-spine"></div>
+              <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold">Cozinha dos Ancestrais</div>
+              <div>
+                <svg class="w-10 h-10 mx-auto text-amber-300 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                </svg>
+                <div class="font-serif font-bold text-base leading-snug">Coração Forte & Artérias Limpas</div>
+              </div>
+              <div class="text-[9px] text-rose-200">Guia Prático de Culinária</div>
+            </div>
+
+            <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Pressão & Circulação
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-oliva-900 mb-2">Coração Forte & Artérias Limpas</h3>
+            <p class="text-sm text-texto-suave mb-4">
+              Receitas ancestrais que auxiliam no relaxamento dos vasos sanguíneos, ajudam no equilíbrio da pressão alta e desentopem a circulação das pernas.
+            </p>
+
+            <ul class="text-sm space-y-2 text-texto-principal mb-6">
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Chás e caldos vasodilatadores</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Adeus ao inchaço nos pés e pernas</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Temperos que substituem o excesso de sal</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-creme-200 pt-4">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-xs text-gray-500 line-through">De R$ 29,90</span>
+              <span class="text-2xl font-bold text-oliva-900">Por R$ 9,90</span>
+            </div>
+            <button onclick="comprarItem('Coração Forte & Artérias Limpas', '9,90')" class="w-full bg-oliva-800 hover:bg-oliva-900 text-white font-bold py-3.5 px-4 rounded-xl text-base flex items-center justify-center gap-2 transition active:scale-95 shadow">
+              <span>Quero Este Livro</span>
+              <svg class="w-5 h-5 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- LIVRO 2: CÉREBRO -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-creme-300 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="h-60 w-44 mx-auto mb-6 book-cover bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 p-4 text-white flex flex-col justify-between text-center border-l-4 border-cyan-400">
+              <div class="book-spine"></div>
+              <div class="text-[10px] uppercase tracking-widest text-cyan-300 font-bold">Cozinha dos Ancestrais</div>
+              <div>
+                <svg class="w-10 h-10 mx-auto text-cyan-300 mb-2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                <div class="font-serif font-bold text-base leading-snug">Mente Jovem & Cérebro Ativo</div>
+              </div>
+              <div class="text-[9px] text-indigo-200">Guia Prático de Culinária</div>
+            </div>
+
+            <div class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Memória & Foco
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-oliva-900 mb-2">Mente Jovem & Cérebro Ativo</h3>
+            <p class="text-sm text-texto-suave mb-4">
+              Alimentos neuroprotetores usados há milênios para blindar a memória, combater a 'névoa mental' e afastar o medo do esquecimento.
+            </p>
+
+            <ul class="text-sm space-y-2 text-texto-principal mb-6">
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Nutrientes para sinapses rápidas</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Mais concentração para leitura e tarefas</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Melhora comprovada no sono reparador</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-creme-200 pt-4">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-xs text-gray-500 line-through">De R$ 29,90</span>
+              <span class="text-2xl font-bold text-oliva-900">Por R$ 9,90</span>
+            </div>
+            <button onclick="comprarItem('Mente Jovem & Cérebro Ativo', '9,90')" class="w-full bg-oliva-800 hover:bg-oliva-900 text-white font-bold py-3.5 px-4 rounded-xl text-base flex items-center justify-center gap-2 transition active:scale-95 shadow">
+              <span>Quero Este Livro</span>
+              <svg class="w-5 h-5 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- LIVRO 3: FÍGADO -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-creme-300 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="h-60 w-44 mx-auto mb-6 book-cover bg-gradient-to-br from-emerald-900 via-teal-800 to-green-950 p-4 text-white flex flex-col justify-between text-center border-l-4 border-yellow-300">
+              <div class="book-spine"></div>
+              <div class="text-[10px] uppercase tracking-widest text-teal-300 font-bold">Cozinha dos Ancestrais</div>
+              <div>
+                <svg class="w-10 h-10 mx-auto text-teal-300 mb-2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                </svg>
+                <div class="font-serif font-bold text-base leading-snug">Fígado Leve & Detox Natural</div>
+              </div>
+              <div class="text-[9px] text-teal-200">Guia Prático de Culinária</div>
+            </div>
+
+            <div class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Limpeza & Digestão
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-oliva-900 mb-2">Fígado Leve & Desintoxicação</h3>
+            <p class="text-sm text-texto-suave mb-4">
+              Receitas com ervas amargas sagradas e legumes específicos que auxiliam na redução da gordura no fígado e acordar sem boca amarga.
+            </p>
+
+            <ul class="text-sm space-y-2 text-texto-principal mb-6">
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Fim do cansaço crônico pós-refeição</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Adeus ao inchaço abdominal e gases</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Alívio natural sem remédios pesados</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-creme-200 pt-4">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-xs text-gray-500 line-through">De R$ 29,90</span>
+              <span class="text-2xl font-bold text-oliva-900">Por R$ 9,90</span>
+            </div>
+            <button onclick="comprarItem('Fígado Leve & Detox Natural', '9,90')" class="w-full bg-oliva-800 hover:bg-oliva-900 text-white font-bold py-3.5 px-4 rounded-xl text-base flex items-center justify-center gap-2 transition active:scale-95 shadow">
+              <span>Quero Este Livro</span>
+              <svg class="w-5 h-5 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- LIVRO 4: ESTÔMAGO -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-creme-300 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="h-60 w-44 mx-auto mb-6 book-cover bg-gradient-to-br from-amber-900 via-amber-800 to-stone-900 p-4 text-white flex flex-col justify-between text-center border-l-4 border-amber-300">
+              <div class="book-spine"></div>
+              <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold">Cozinha dos Ancestrais</div>
+              <div>
+                <svg class="w-10 h-10 mx-auto text-amber-300 mb-2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+                <div class="font-serif font-bold text-base leading-snug">Estômago Calmo & Intestino Vivo</div>
+              </div>
+              <div class="text-[9px] text-amber-200">Guia Prático de Culinária</div>
+            </div>
+
+            <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Refluxo & Gastrite
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-oliva-900 mb-2">Estômago Calmo & Intestino Vivo</h3>
+            <p class="text-sm text-texto-suave mb-4">
+              Chega de queimação no peito, refluxo ao deitar e intestino preso. Aprenda a fazer caldos cicatrizantes e fermentados caseiros simples.
+            </p>
+
+            <ul class="text-sm space-y-2 text-texto-principal mb-6">
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Cicatrização da mucosa gástrica</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Regularização do intestino de forma suave</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Sem necessidade de remédios químicos contínuos</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-creme-200 pt-4">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-xs text-gray-500 line-through">De R$ 29,90</span>
+              <span class="text-2xl font-bold text-oliva-900">Por R$ 9,90</span>
+            </div>
+            <button onclick="comprarItem('Estômago Calmo & Intestino Vivo', '9,90')" class="w-full bg-oliva-800 hover:bg-oliva-900 text-white font-bold py-3.5 px-4 rounded-xl text-base flex items-center justify-center gap-2 transition active:scale-95 shadow">
+              <span>Quero Este Livro</span>
+              <svg class="w-5 h-5 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- LIVRO 5: VITALIDADE -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-creme-300 shadow-md hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="h-60 w-44 mx-auto mb-6 book-cover bg-gradient-to-br from-orange-950 via-amber-900 to-amber-950 p-4 text-white flex flex-col justify-between text-center border-l-4 border-orange-400">
+              <div class="book-spine"></div>
+              <div class="text-[10px] uppercase tracking-widest text-orange-300 font-bold">Cozinha dos Ancestrais</div>
+              <div>
+                <svg class="w-10 h-10 mx-auto text-orange-300 mb-2" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <div class="font-serif font-bold text-base leading-snug">Vitalidade & Imunidade de Ferro</div>
+              </div>
+              <div class="text-[9px] text-orange-200">Guia Prático de Culinária</div>
+            </div>
+
+            <div class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Energia & Dores nas Juntas
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-oliva-900 mb-2">Vitalidade & Imunidade de Ferro</h3>
+            <p class="text-sm text-texto-suave mb-4">
+              Os segredos das sopas reconfortantes e chás anti-inflamatórios que tiram a rigidez matinal dos joelhos e devolvem o pique para o dia a dia.
+            </p>
+
+            <ul class="text-sm space-y-2 text-texto-principal mb-6">
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Colágeno real e biodisponível</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Alívio em dores da artrite e artrose</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✔</span> Mais energia logo nas primeiras horas do dia</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-creme-200 pt-4">
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-xs text-gray-500 line-through">De R$ 29,90</span>
+              <span class="text-2xl font-bold text-oliva-900">Por R$ 9,90</span>
+            </div>
+            <button onclick="comprarItem('Vitalidade & Imunidade de Ferro', '9,90')" class="w-full bg-oliva-800 hover:bg-oliva-900 text-white font-bold py-3.5 px-4 rounded-xl text-base flex items-center justify-center gap-2 transition active:scale-95 shadow">
+              <span>Quero Este Livro</span>
+              <svg class="w-5 h-5 text-dourado-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SUPER OFERTA DO COMBO COMPLETO DEPOIS DOS INDIVIDUAIS -->
+      <div id="combo" class="bg-gradient-to-br from-oliva-900 via-oliva-800 to-oliva-950 text-white rounded-3xl p-6 sm:p-10 md:p-12 border-4 border-dourado-500 shadow-2xl relative overflow-hidden">
+        <div class="absolute -top-12 -right-12 bg-dourado-500 text-oliva-950 font-extrabold text-sm uppercase py-8 px-14 transform rotate-45 shadow-lg hidden sm:block">
+          MAIS VENDIDO
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="inline-block bg-dourado-500 text-oliva-950 font-black text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            🔥 Coleção Ouro - O Pacote Mais Completo
+          </span>
+          <h3 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
+            Leve Todos os 5 Livros + 2 Bônus Exclusivos com Super Desconto
+          </h3>
+          <p class="text-creme-200 text-lg md:text-xl mb-8">
+            Tenha em mãos a enciclopédia completa da saúde ancestral. Cuide do coração, mente, estômago, fígado e vitalidade de uma só vez.
+          </p>
+
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8 text-left border border-white/20">
+            <h4 class="font-bold text-dourado-500 text-lg mb-3 uppercase tracking-wider">O Que Você Recebe Imediatamente:</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm md:text-base">
+              <div class="flex items-center gap-2"><span>⭐</span> <strong>Livro 1:</strong> Coração Forte & Artérias Limpas</div>
+              <div class="flex items-center gap-2"><span>⭐</span> <strong>Livro 2:</strong> Mente Jovem & Cérebro Ativo</div>
+              <div class="flex items-center gap-2"><span>⭐</span> <strong>Livro 3:</strong> Fígado Leve & Detox Natural</div>
+              <div class="flex items-center gap-2"><span>⭐</span> <strong>Livro 4:</strong> Estômago Calmo & Intestino Vivo</div>
+              <div class="flex items-center gap-2"><span>⭐</span> <strong>Livro 5:</strong> Vitalidade & Imunidade de Ferro</div>
+              <div class="flex items-center gap-2 text-dourado-400"><span>🎁</span> <strong>Bônus 1:</strong> Guia de Temperos e Ervas Curativas</div>
+              <div class="flex items-center gap-2 text-dourado-400"><span>🎁</span> <strong>Bônus 2:</strong> Chás Noturnos para o Sono Profundo</div>
+              <div class="flex items-center gap-2 text-emerald-300"><span>📱</span> <strong>Acesso Vitalício:</strong> No celular, tablet ou para imprimir</div>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <p class="text-sm text-creme-200 line-through">De R$ 149,50 se comprasse tudo separado</p>
+            <div class="text-4xl sm:text-5xl md:text-6xl font-black text-dourado-500 my-2">
+              R$ 39,90
+            </div>
+            <p class="text-creme-100 font-medium">Pagamento único no Pix ou Cartão • Sem mensalidades</p>
+          </div>
+
+          <button onclick="comprarItem('COMBO COMPLETO (5 Livros + 2 Bônus)', '39,90')" class="btn-cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white font-black text-xl md:text-2xl py-5 px-10 rounded-2xl shadow-2xl transition transform active:scale-95">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>QUERO A COLEÇÃO COMPLETA (R$ 39,90)</span>
+          </button>
+          
+          <div class="mt-4 flex items-center justify-center gap-4 text-xs text-creme-200">
+            <span>🔒 Compra 100% Criptografada</span>
+            <span>⚡ Envio Imediato no E-mail</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="py-16 md:py-20 bg-creme-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oliva-900 mb-3">
+          O que diz quem já colocou essas receitas na mesa
+        </h2>
+        <p class="text-lg text-texto-suave">
+          Histórias reais de pessoas que recuperaram a leveza e a vitalidade.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-3xl border border-creme-300 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-amber-500 flex gap-1 mb-3 text-lg">★★★★★</div>
+            <p class="text-texto-principal text-base leading-relaxed mb-4">
+              "Eu sofria muito com refluxo e queimação toda noite. Comecei a tomar o caldo cicatrizante que ensina no livro do estômago e em duas semanas já dormia sem acordar afogada."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-creme-200">
+            <div class="w-12 h-12 rounded-full bg-creme-300 flex items-center justify-center font-bold text-oliva-900 text-lg">DS</div>
+            <div>
+              <div class="font-bold text-oliva-900 leading-tight">Dona Sônia Ribeiro</div>
+              <div class="text-xs text-texto-suave">64 anos • Belo Horizonte/MG</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-creme-300 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-amber-500 flex gap-1 mb-3 text-lg">★★★★★</div>
+            <p class="text-texto-principal text-base leading-relaxed mb-4">
+              "As letras são bem grandes e fáceis de ler no meu tablet. O médico elogiou meus exames no mês passado. O melhor é que as comidas são muito gostosas, nada de comida sem gosto."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-creme-200">
+            <div class="w-12 h-12 rounded-full bg-creme-300 flex items-center justify-center font-bold text-oliva-900 text-lg">AL</div>
+            <div>
+              <div class="font-bold text-oliva-900 leading-tight">Antônio Linhares</div>
+              <div class="text-xs text-texto-suave">71 anos • Campinas/SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl border border-creme-300 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-amber-500 flex gap-1 mb-3 text-lg">★★★★★</div>
+            <p class="text-texto-principal text-base leading-relaxed mb-4">
+              "Minhas pernas viviam inchadas no fim da tarde. As receitas do livro do coração me ajudaram a desinchar bastante. Voltei a fazer minhas caminhadas na praça com disposição."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-creme-200">
+            <div class="w-12 h-12 rounded-full bg-creme-300 flex items-center justify-center font-bold text-oliva-900 text-lg">MC</div>
+            <div>
+              <div class="font-bold text-oliva-900 leading-tight">Maria de Lourdes</div>
+              <div class="text-xs text-texto-suave">59 anos • Curitiba/PR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="py-14 bg-creme-200/80 border-t border-b border-creme-300">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-oliva-700/30 shadow-lg flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+        <div class="w-32 h-32 rounded-full bg-oliva-800 text-dourado-500 flex flex-col items-center justify-center flex-shrink-0 border-4 border-dourado-500 shadow-inner">
+          <span class="text-xs uppercase font-bold tracking-widest text-creme-100">Garantia</span>
+          <span class="text-3xl font-black">7 DIAS</span>
+          <span class="text-[10px] uppercase text-creme-200">100% Blindada</span>
+        </div>
+
+        <div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-oliva-900 mb-2">
+            Seu Risco é Rigorosamente ZERO
+          </h3>
+          <p class="text-base text-texto-suave leading-relaxed mb-3">
+            Adquira o livro ou a coleção completa hoje. Leia, prepare as primeiras receitas e sinta a diferença. Se por qualquer motivo você achar que não valeu a pena, basta nos enviar um e-mail e devolveremos 100% do seu dinheiro. Sem burocracia.
+          </p>
+          <p class="text-xs text-oliva-800 font-bold">
+            🔒 Sua tranquilidade e confiança vêm em primeiro lugar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-20 bg-creme-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-oliva-900 mb-3">Perguntas Frequentes</h2>
+        <p class="text-base sm:text-lg text-texto-suave">Tire suas dúvidas de forma rápida e transparente.</p>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        <div class="border border-creme-300 rounded-2xl bg-white overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(this)" class="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-lg text-oliva-900 focus:outline-none">
+            <span>Como vou receber os livros após a compra?</span>
+            <span class="text-2xl text-terracota-600 faq-icon font-light">+</span>
+          </button>
+          <div class="faq-content px-5 pb-5 text-texto-suave text-base">
+            O envio é <strong>imediato</strong>! Assim que o pagamento for aprovado (via Pix ou Cartão), você recebe um link seguro no seu e-mail cadastrado. Basta clicar para abrir no celular, tablet ou computador. Você também pode imprimir se preferir.
+          </div>
+        </div>
+
+        <div class="border border-creme-300 rounded-2xl bg-white overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(this)" class="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-lg text-oliva-900 focus:outline-none">
+            <span>Eu consigo ler no meu celular sem precisar forçar a vista?</span>
+            <span class="text-2xl text-terracota-600 faq-icon font-light">+</span>
+          </button>
+          <div class="faq-content px-5 pb-5 text-texto-suave text-base">
+            Sim! Todos os nossos livros foram diagramados pensando exatamente em nós que valorizamos um texto nítido: utilizamos <strong>letras grandes, alto contraste e fundo claro</strong> para que sua leitura seja confortável.
+          </div>
+        </div>
+
+        <div class="border border-creme-300 rounded-2xl bg-white overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(this)" class="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-lg text-oliva-900 focus:outline-none">
+            <span>Os ingredientes das receitas são fáceis de achar?</span>
+            <span class="text-2xl text-terracota-600 faq-icon font-light">+</span>
+          </button>
+          <div class="faq-content px-5 pb-5 text-texto-suave text-base">
+            Absolutamente sim. Nossos ancestrais não compravam produtos caros de empório. Você encontrará todos os ingredientes na feira livre, no mercadinho da esquina ou no hortifrúti perto da sua casa.
+          </div>
+        </div>
+
+        <div class="border border-creme-300 rounded-2xl bg-white overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(this)" class="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-lg text-oliva-900 focus:outline-none">
+            <span>É seguro comprar pelo site?</span>
+            <span class="text-2xl text-terracota-600 faq-icon font-light">+</span>
+          </button>
+          <div class="faq-content px-5 pb-5 text-texto-suave text-base">
+            Totalmente seguro. Utilizamos tecnologia com criptografia de ponta a ponta. Seus dados pessoais e de pagamento ficam 100% protegidos e confidenciais.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#2E4C38] text-creme-200 py-12 border-t border-oliva-900 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-oliva-800 text-dourado-500 flex items-center justify-center font-bold text-lg border border-dourado-500">
+            🌿
+          </div>
+          <span class="font-serif text-xl font-bold text-white">Cozinha dos Ancestrais</span>
+        </div>
+        <p class="text-creme-300 text-sm leading-relaxed mb-4">
+          Resgatando receitas tradicionais e alimentos esquecidos para transformar a sua longevidade com embasamento científico e respeito ao seu organismo.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider mb-3 text-sm">Atendimento & Suporte</h4>
+        <p class="text-creme-300">E-mail: <strong class="text-white">cozinhadosancestrais@gmail.com</strong></p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider mb-3 text-sm">Avisos Importantes</h4>
+        <p class="text-xs text-creme-300 leading-relaxed mb-3">
+          As informações presentes nestes guias têm objetivo educacional de bem-estar alimentar e não substituem o acompanhamento ou diagnóstico médico.
+        </p>
+        <p class="text-xs text-creme-300">
+          © 2026 Cozinha dos Ancestrais. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE CHECKOUT -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border-2 border-creme-300">
+      <button onclick="fecharModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold p-1">✕</button>
+
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-2xl">✓</div>
+        <h3 class="font-serif text-2xl font-bold text-oliva-900" id="modalTitulo">Finalizar Pedido</h3>
+        <p class="text-sm text-texto-suave">Acesso imediato enviado para o seu e-mail</p>
+      </div>
+
+      <div class="bg-creme-100 p-4 rounded-xl border border-creme-300 mb-5">
+        <div class="flex justify-between items-center text-sm mb-1">
+          <span class="text-texto-suave">Produto Selecionado:</span>
+          <strong class="text-oliva-900 text-right" id="modalNomeProduto">Nome do Produto</strong>
+        </div>
+        <div class="flex justify-between items-center text-lg font-bold">
+          <span class="text-texto-suave">Valor Total:</span>
+          <span class="text-terracota-600 text-xl" id="modalPrecoProduto">R$ 9,90</span>
+        </div>
+      </div>
+
+      <form id="formCheckout" onsubmit="concluirSimulacao(event)" class="space-y-4">
+        <div>
+          <label class="block text-sm font-bold text-oliva-900 mb-1" for="nome">Seu Nome Completo:</label>
+          <input type="text" id="nome" required placeholder="Ex: Maria José da Silva" class="w-full px-4 py-3 border border-creme-300 rounded-xl focus:ring-2 focus:ring-oliva-700 focus:outline-none text-base">
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-oliva-900 mb-1" for="email">Seu Melhor E-mail:</label>
+          <input type="email" id="email" required placeholder="Ex: seuemail@gmail.com" class="w-full px-4 py-3 border border-creme-300 rounded-xl focus:ring-2 focus:ring-oliva-700 focus:outline-none text-base">
+        </div>
+
+        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
+          <span>IR PARA O PAGAMENTO SEGURO</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="mt-4 text-center">
+        <span class="text-xs text-gray-500">🔒 Ambiente 100% Seguro e Criptografado</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+      const isOpen = content.classList.contains('open');
+
+      document.querySelectorAll('.faq-content').forEach(item => item.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(ic => ic.textContent = '+');
+
+      if (!isOpen) {
+        content.classList.add('open');
+        icon.textContent = '−';
+      }
+    }
+
+    const modal = document.getElementById('checkoutModal');
+    const modalNomeProduto = document.getElementById('modalNomeProduto');
+    const modalPrecoProduto = document.getElementById('modalPrecoProduto');
+
+    function comprarItem(nome, preco) {
+      modalNomeProduto.textContent = nome;
+      modalPrecoProduto.textContent = 'R$ ' + preco;
+      modal.classList.remove('hidden');
+    }
+
+    function fecharModal() {
+      modal.classList.add('hidden');
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        fecharModal();
+      }
+    }
+
+    function concluirSimulacao(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      alert(`Obrigado, ${nome}! Redirecionando para o ambiente de pagamento seguro...`);
+      fecharModal();
+    }
+  </script>
+
+</body>
+</html>
