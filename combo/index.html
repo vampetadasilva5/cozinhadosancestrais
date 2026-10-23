@@ -138,7 +138,7 @@
     <div class="max-w-5xl mx-auto px-4 text-center">
       <div class="inline-flex items-center gap-2 bg-oliva-700/10 text-oliva-800 border border-oliva-700/20 px-4 py-1.5 rounded-full text-sm md:text-base font-semibold mb-6">
         <svg class="w-5 h-5 text-oliva-700" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
         <span>Comprovado pela Ciência Médica Moderna</span>
       </div>
@@ -732,53 +732,6 @@
     </div>
   </footer>
 
-  <!-- MODAL DE CHECKOUT (MANTIDO NO CÓDIGO MAS INATIVO) -->
-  <div id="checkoutModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border-2 border-creme-300">
-      <button onclick="fecharModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold p-1">✕</button>
-
-      <div class="text-center mb-6">
-        <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-2xl">✓</div>
-        <h3 class="font-serif text-2xl font-bold text-oliva-900" id="modalTitulo">Finalizar Pedido</h3>
-        <p class="text-sm text-texto-suave">Acesso imediato enviado para o seu e-mail</p>
-      </div>
-
-      <div class="bg-creme-100 p-4 rounded-xl border border-creme-300 mb-5">
-        <div class="flex justify-between items-center text-sm mb-1">
-          <span class="text-texto-suave">Produto Selecionado:</span>
-          <strong class="text-oliva-900 text-right" id="modalNomeProduto">Nome do Produto</strong>
-        </div>
-        <div class="flex justify-between items-center text-lg font-bold">
-          <span class="text-texto-suave">Valor Total:</span>
-          <span class="text-terracota-600 text-xl" id="modalPrecoProduto">R$ 39,90</span>
-        </div>
-      </div>
-
-      <form id="formCheckout" onsubmit="concluirSimulacao(event)" class="space-y-4">
-        <div>
-          <label class="block text-sm font-bold text-oliva-900 mb-1" for="nome">Seu Nome Completo:</label>
-          <input type="text" id="nome" required placeholder="Ex: Maria José da Silva" class="w-full px-4 py-3 border border-creme-300 rounded-xl focus:ring-2 focus:ring-oliva-700 focus:outline-none text-base">
-        </div>
-
-        <div>
-          <label class="block text-sm font-bold text-oliva-900 mb-1" for="email">Seu Melhor E-mail:</label>
-          <input type="email" id="email" required placeholder="Ex: seuemail@gmail.com" class="w-full px-4 py-3 border border-creme-300 rounded-xl focus:ring-2 focus:ring-oliva-700 focus:outline-none text-base">
-        </div>
-
-        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 shadow-lg transition active:scale-95">
-          <span>IR PARA O PAGAMENTO SEGURO</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </button>
-      </form>
-
-      <div class="mt-4 text-center">
-        <span class="text-xs text-gray-500">🔒 Ambiente 100% Seguro e Criptografado</span>
-      </div>
-    </div>
-  </div>
-
   <script>
     function toggleFaq(button) {
       const content = button.nextElementSibling;
@@ -792,34 +745,6 @@
         content.classList.add('open');
         icon.textContent = '−';
       }
-    }
-
-    const modal = document.getElementById('checkoutModal');
-    const modalNomeProduto = document.getElementById('modalNomeProduto');
-    const modalPrecoProduto = document.getElementById('modalPrecoProduto');
-
-    function comprarItem(nome, preco) {
-      modalNomeProduto.textContent = nome;
-      modalPrecoProduto.textContent = 'R$ ' + preco;
-      modal.classList.remove('hidden');
-    }
-
-    function fecharModal() {
-      modal.classList.add('hidden');
-    }
-
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        fecharModal();
-      }
-    }
-
-    function concluirSimulacao(e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      alert(`Obrigado, ${nome}! Redirecionando para o ambiente de pagamento seguro...`);
-      fecharModal();
     }
   </script>
 
